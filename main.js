@@ -54,13 +54,13 @@ function operate(op_button) {
    num2 = res.textContent;
    if ( num2 != '') {
       calc();
-      operator = op_button.target.textContent;
+      second_operator = op_button.target.textContent;
       num1 = res.textContent;
    }
 }
 
 function take_num (button) {
-   if ( operator != ''){
+   if (operator != '' && num1 == 0 ){
       res_text = '';
       res.textContent = '';
    }
