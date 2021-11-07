@@ -26,6 +26,7 @@ function remove_last_number(){
    new_string.pop();
    res.textContent = new_string.join('');
    res_text = res.textContent;
+   dot_switch = false;
 }
 
 function clear() {
