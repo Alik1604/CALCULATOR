@@ -12,6 +12,7 @@ let num1 = 0;
 let num2 = 0;
 let operator = '';
 let dot_switch = false;
+let second_operator = '';
 
 buttons.forEach( button => button.addEventListener('click',take_num));
 op_buttons.forEach( op_button => op_button.addEventListener('click',operate));
@@ -54,15 +55,18 @@ function operate(op_button) {
    num2 = res.textContent;
    if ( num2 != '') {
       calc();
-      second_operator = op_button.target.textContent;
+      operator = op_button.target.textContent;
+      second_operator = operator;
       num1 = res.textContent;
+
    }
 }
 
 function take_num (button) {
-   if (operator != '' && num1 == 0 ){
+   if (second_operator != ''){
       res_text = '';
       res.textContent = '';
+      second_operator = '';
    }
    let button_text = button.target.textContent;
    res_text = res_text + button_text;
