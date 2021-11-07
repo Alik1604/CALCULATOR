@@ -54,10 +54,16 @@ function operate(op_button) {
    num2 = res.textContent;
    if ( num2 != '') {
       calc();
+      operator = op_button.target.textContent;
+      num1 = res.textContent;
    }
 }
 
 function take_num (button) {
+   if ( operator != ''){
+      res_text = '';
+      res.textContent = '';
+   }
    let button_text = button.target.textContent;
    res_text = res_text + button_text;
    res.textContent = res_text;
