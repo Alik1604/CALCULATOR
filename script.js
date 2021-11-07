@@ -4,6 +4,8 @@ const res = document.querySelector("#res");
 const res_button = document.getElementById("res_button");
 const dot = document.getElementById("dot");
 const clear_button = document.getElementById("cl_button");
+const del_button = document.getElementById("del_button");
+
 
 let res_text = '';
 let num1 = 0;
@@ -16,6 +18,14 @@ op_buttons.forEach( op_button => op_button.addEventListener('click',operate));
 res_button.addEventListener('click',calc);
 dot.addEventListener('click',add_dot);
 clear_button.addEventListener('click',clear);
+del_button.addEventListener('click', remove_last_number);
+
+function remove_last_number(){
+   let new_string = Array.from(res.textContent);
+   new_string.pop();
+   res.textContent = new_string.join('');
+   res_text = res.textContent;
+}
 
 function clear() {
    res.textContent = '';
