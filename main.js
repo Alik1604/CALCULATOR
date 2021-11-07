@@ -36,12 +36,12 @@ function clear() {
 }
 
 function add_dot() {
-   if ( dot_switch != true){
+   let dot_string = Array.from(res.textContent);
+   if ( dot_string.includes('.') == false && dot_switch != true){
       res_text = res_text + dot.textContent;
       res.textContent = res_text;
       dot_switch = true;
    }
-   
 }
 
 function operate(op_button) {
@@ -58,7 +58,6 @@ function operate(op_button) {
       operator = op_button.target.textContent;
       second_operator = operator;
       num1 = res.textContent;
-
    }
 }
 
@@ -67,6 +66,7 @@ function take_num (button) {
       res_text = '';
       res.textContent = '';
       second_operator = '';
+      dot_switch = true;
    }
    let button_text = button.target.textContent;
    res_text = res_text + button_text;
@@ -80,21 +80,25 @@ function calc() {
             res.textContent =Number(num2) + Number(num1);
             operator = '';
             res_text = res.textContent;
+            dot_switch = true;
             break;
          case "-":
             res.textContent =Number(num1) - Number(num2);
             operator = '';
             res_text = res.textContent;
+            dot_switch = true;
             break;
          case "*":
             res.textContent =Number(num2) * Number(num1);
             operator = '';
             res_text = res.textContent;
+            dot_switch = true;
             break;
          case "/":
             res.textContent =Number(num1) / Number(num2);
             operator = '';
             res_text = res.textContent;
+            dot_switch = true;
             break;
          default:
             break;
